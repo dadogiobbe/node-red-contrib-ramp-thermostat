@@ -1,5 +1,16 @@
 <script type="text/x-red" data-template-name="ramp-thermostat">
     <div class="form-row">
+        <label for="node-input-type"><i class="fa fa-line-filter"></i> Type</label>
+        <select id="node-input-type">
+            <option value="0">Heater</option>
+            <option value="1">Cooler</option>
+            <option value="2">Auto</option>
+        </select>
+
+		
+		<input type="text" id="node-input-type">
+    </div>
+	<div class="form-row">
         <label for="node-input-profile"><i class="fa fa-line-chart"></i> Profile</label>
         <input type="text" id="node-input-profile">
     </div>
@@ -108,6 +119,7 @@
         color: '#E9967A',
         defaults: {
             name: {value:""},
+            type: {value:"0"},
             profile: {value:"",type:"profile"},
             hysteresisplus: {value:0, validate:RED.validators.number()},
             hysteresisminus: {value:0, validate:RED.validators.number()}
